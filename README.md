@@ -63,11 +63,11 @@ The correct fuse values for the DIPduino (ATmega328P @ 16 MHz):
      -U lfuse:w:0xFF:m -U hfuse:w:0xDA:m -U efuse:w:0xFD:m
    ```
 
-3. **Flash the bootloader** (the hex file is in the `bootloader/` folder of this repo):
+3. **Flash the bootloader** — download [`ATmegaBOOT_168_atmega328.hex`](https://github.com/arduino/ArduinoCore-avr/raw/master/bootloaders/atmega/ATmegaBOOT_168_atmega328.hex) from the official Arduino core, then:
 
    ```bash
    avrdude -c usbasp -p m328p \
-     -U flash:w:bootloader/ATmegaBOOT_168_atmega328.hex:i
+     -U flash:w:ATmegaBOOT_168_atmega328.hex:i
    ```
 
 4. Done — the ATmega328P is now ready.
