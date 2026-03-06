@@ -5,7 +5,6 @@ An inexpensive, through-hole Arduino clone you build from scratch.
 DIPduino uses large, easy-to-solder through-hole (DIP) components — perfect for beginners learning to solder. All you need is a soldering iron, solder, and the kit.
 
 - [Assembly instructions (flip-book)](https://heyzine.com/flip-book/8c8d4a5704.html)
-- [Buy a kit](https://gadgetsthathelp.com/product/dipduino/)
 - [Kickstarter campaign](https://www.kickstarter.com/projects/dipduino/dipduino-an-arduino-you-build)
 
 ## Repository Structure
@@ -64,17 +63,12 @@ The correct fuse values for the DIPduino (ATmega328P @ 16 MHz):
      -U lfuse:w:0xFF:m -U hfuse:w:0xDA:m -U efuse:w:0xFD:m
    ```
 
-3. **Flash the bootloader**:
+3. **Flash the bootloader** (the hex file is in the `bootloader/` folder of this repo):
 
    ```bash
    avrdude -c usbasp -p m328p \
-     -U flash:w:ATmegaBOOT_168_atmega328.hex:i
+     -U flash:w:bootloader/ATmegaBOOT_168_atmega328.hex:i
    ```
-
-   The bootloader hex file is included with the Arduino IDE at:
-   - **macOS**: `~/Library/Arduino15/packages/arduino/hardware/avr/*/bootloaders/atmega/ATmegaBOOT_168_atmega328.hex`
-   - **Linux**: `~/.arduino15/packages/arduino/hardware/avr/*/bootloaders/atmega/ATmegaBOOT_168_atmega328.hex`
-   - **Windows**: `%LOCALAPPDATA%\Arduino15\packages\arduino\hardware\avr\*\bootloaders\atmega\ATmegaBOOT_168_atmega328.hex`
 
 4. Done — the ATmega328P is now ready.
 
@@ -147,3 +141,4 @@ If you want to modify the USB firmware:
 - USB firmware by [Jens Geisler](https://github.com/jgeisler0303) (PIC16F1454_USB2Serial)
 - Inspired by Nkosana Masuku's vision for affordable STEM education in Zimbabwe
 - Backed by 36 supporters on [Kickstarter](https://www.kickstarter.com/projects/dipduino/dipduino-an-arduino-you-build)
+- All glory to Jesus Christ
